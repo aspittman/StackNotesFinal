@@ -30,11 +30,22 @@ class AddNoteActivity: AppCompatActivity() {
         //Second toolbar
         val typeSelectionToolbar: Toolbar = binding.typeSelectionToolbar
         typeSelectionToolbar.inflateMenu(R.menu.type_selections_menu)
-
+        typeSelectionToolbar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.test_show ->  {
+                    Toast.makeText(this, "This is a menu test", Toast.LENGTH_SHORT).show()
+                    true
+                }
+                else -> {
+                    super.onOptionsItemSelected(menuItem)
+                }
+            }
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.add_menu_save -> {
+            Toast.makeText(this, "Yay", Toast.LENGTH_SHORT).show()
 //            try {
 //                val file = File("test");
 //                editText = binding.addNoteEdittext
@@ -51,10 +62,6 @@ class AddNoteActivity: AppCompatActivity() {
 //            } catch (t: Throwable) {
 //                Toast.makeText(this, "Exception: $t", Toast.LENGTH_LONG).show();
 //            }
-            true
-        }
-        R.id.test_show -> {
-            Toast.makeText(this, "This is a menu test", Toast.LENGTH_SHORT).show()
             true
         }
         else -> {

@@ -18,7 +18,7 @@
         android:id="@+id/layout_for_toolbars"
         android:layout_below="@id/add_note_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize">
+        android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -40,16 +40,24 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <EditText
+            android:layout_below="@+id/layout_for_toolbars"
+            android:id="@+id/add_note_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:hint="Type Here for Magic :D" />
 
     </androidx.core.widget.NestedScrollView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-            <EditText
-                android:layout_below="@+id/layout_for_toolbars"
-                android:id="@+id/add_note_edittext"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="start"
-                android:hint="Type Here for Magic :D" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginTop="600dp"/>
+
 </RelativeLayout>
